@@ -3,8 +3,8 @@ import '@/styles/global.css';
 import type { Metadata } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
-import { AppConfig } from '@/utils/AppConfig';
 import StoreProvider from '@/libs/store-provider';
+import { AppConfig } from '@/utils/AppConfig';
 
 export const metadata: Metadata = {
   icons: [
@@ -51,9 +51,7 @@ export default function RootLayout(props: {
           locale={props.params.locale}
           messages={messages}
         > */}
-        <StoreProvider>
-        {props.children}
-        </StoreProvider>
+        <StoreProvider>{props.children}</StoreProvider>
         {/* <DemoBadge /> */}
         {/* </NextIntlClientProvider> */}
       </body>

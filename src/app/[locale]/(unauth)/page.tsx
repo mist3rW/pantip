@@ -1,7 +1,6 @@
-
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
-import Home from '@/components/home/Home';
 
+import Home from '@/components/home/Home';
 
 export async function generateMetadata(props: { params: { locale: string } }) {
   const t = await getTranslations({
@@ -18,13 +17,10 @@ export async function generateMetadata(props: { params: { locale: string } }) {
 export default function Index(props: { params: { locale: string } }) {
   unstable_setRequestLocale(props.params.locale);
 
-  
-
-
   return (
     <div>
-      <div className="flex flex-col max-w-6xl mx-auto">
-        <Home/>
+      <div className="mx-auto flex max-w-6xl flex-col">
+        <Home />
       </div>
     </div>
   );

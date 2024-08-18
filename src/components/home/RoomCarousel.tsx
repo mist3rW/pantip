@@ -1,11 +1,12 @@
-import type { PantipRoomData } from '@/types/pantip';
-import Link from 'next/link';
-import {  Scrollbar } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
+import Link from 'next/link';
+import { Scrollbar } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import type { PantipRoomData } from '@/types/pantip';
 
 type RoomCarouselProps = {
   data: PantipRoomData[];
@@ -42,20 +43,23 @@ export default function RoomCarousel({ data }: RoomCarouselProps) {
             slidesPerView: 12,
           },
         }}
-        className='my-4'
+        className="my-4"
       >
         {data.map((item) => (
           <SwiperSlide key={item.id}>
             <Link href={item.link_url}>
-              <div className="flex flex-col justify-center items-center overflow-hidden rounded-md">
+              <div className="flex flex-col items-center justify-center overflow-hidden rounded-md">
+                {/* eslint-disable */}
                 <img
-                    src={item.room_icon_url}
-                    alt={item.name}
-                    width={40}
-                    height={40}
-                    className="rounded-md bg-[#aeaeae] p-1"
-                  />
-                <p className="mt-2 px-2 text-center text-xs sm:text-sm">{item.name}</p>
+                  src={item.room_icon_url}
+                  alt={item.name}
+                  width={40}
+                  height={40}
+                  className="rounded-md bg-[#aeaeae] p-1"
+                />
+                <p className="mt-2 px-2 text-center text-xs sm:text-sm">
+                  {item.name}
+                </p>
               </div>
             </Link>
           </SwiperSlide>

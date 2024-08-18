@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
 import type { HighLightData } from '@/types/pantip';
 
 type HighLightProps = {
@@ -47,7 +48,7 @@ export default function HighLight({ data }: HighLightProps) {
               <div className="flex flex-col overflow-hidden rounded-md">
                 <div className="relative h-72">
                   <Image
-                    src={topic.image_url[0]||''}
+                    src={topic.image_url[0] || ''}
                     alt="{topic.name}"
                     className="size-full object-cover"
                     fill

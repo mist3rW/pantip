@@ -8,6 +8,7 @@
   "rules": {
     "react/no-unescaped-entities": "off",
     "@next/next/no-page-custom-font": "off",
+    "padded-blocks": "off",
     "prettier/prettier": [
       "error",
       {
@@ -38,6 +39,12 @@
         "project": "./tsconfig.json"
       },
       "rules": {
+        "no-param-reassign": [
+          2,
+          {
+            "props": false
+          }
+        ],
         "prettier/prettier": [
           "error",
           {

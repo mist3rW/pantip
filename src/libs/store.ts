@@ -1,6 +1,6 @@
-import pantipReducer from '../state/pantipSlice'
-
 import { configureStore } from '@reduxjs/toolkit';
+
+import pantipReducer from '../state/pantipSlice';
 
 export const makeStore = () => {
   return configureStore({
