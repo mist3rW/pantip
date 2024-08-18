@@ -28,6 +28,16 @@ export default withSentryConfig(
       experimental: {
         serverComponentsExternalPackages: ['@electric-sql/pglite'],
       },
+      images: {
+        remotePatterns: [
+          { protocol: 'https', hostname: 'bloggang.com' },
+          { protocol: 'https', hostname: 'www.bloggang.com' },
+          { protocol: 'https', hostname: 'www.pantipmarket.com' },
+          { protocol: 'https', hostname: 'ptcdn.info' },
+          { protocol: 'https', hostname: 'pantip.com' },
+          { protocol: 'https', hostname: 'f.ptcdn.info' },
+        ],
+      },
     }),
   ),
   {

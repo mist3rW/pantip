@@ -1,11 +1,10 @@
 import '@/styles/global.css';
 
 import type { Metadata } from 'next';
-import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
-import { DemoBadge } from '@/components/DemoBadge';
 import { AppConfig } from '@/utils/AppConfig';
+import StoreProvider from '@/libs/store-provider';
 
 export const metadata: Metadata = {
   icons: [
@@ -43,19 +42,20 @@ export default function RootLayout(props: {
   unstable_setRequestLocale(props.params.locale);
 
   // Using internationalization in Client Components
-  const messages = useMessages();
+  // const messages = useMessages();
 
   return (
     <html lang={props.params.locale}>
       <body>
-        <NextIntlClientProvider
+        {/* <NextIntlClientProvider
           locale={props.params.locale}
           messages={messages}
-        >
-          {props.children}
-
-          <DemoBadge />
-        </NextIntlClientProvider>
+        > */}
+        <StoreProvider>
+        {props.children}
+        </StoreProvider>
+        {/* <DemoBadge /> */}
+        {/* </NextIntlClientProvider> */}
       </body>
     </html>
   );

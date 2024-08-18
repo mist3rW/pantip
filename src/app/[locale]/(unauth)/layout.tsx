@@ -48,14 +48,6 @@ export default function Layout(props: {
               {t('portfolio_link')}
             </Link>
           </li>
-          <li>
-            <a
-              className="border-none text-gray-700 hover:text-gray-900"
-              href="https://github.com/ixartz/Next-js-Boilerplate"
-            >
-              GitHub
-            </a>
-          </li>
         </>
       }
       rightNav={
@@ -84,7 +76,7 @@ export default function Layout(props: {
         </>
       }
     >
-      <div className="py-5 text-xl [&_p]:my-6">{props.children}</div>
+      <div className="py-5 text-xl">{props.children}</div>
     </BaseTemplate>
   );
 }
